@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PeisongdanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.PeisongdanEntity" id="peisongdanMap">
+        <result property="mingcheng" column="mingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="goumaishuliang" column="goumaishuliang"/>
+        <result property="shangjiabianhao" column="shangjiabianhao"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="qishoushouyi" column="qishoushouyi"/>
+        <result property="jiedanshijian" column="jiedanshijian"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="qishouxingming" column="qishouxingming"/>
+        <result property="dianhua" column="dianhua"/>
+        <result property="dingdanzhuangtai" column="dingdanzhuangtai"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+        <result property="longitude" column="longitude"/>
+        <result property="latitude" column="latitude"/>
+        <result property="fulladdress" column="fulladdress"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.PeisongdanVO" >
+		SELECT * FROM peisongdan  peisongdan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.PeisongdanVO" >
+		SELECT  peisongdan.* FROM peisongdan  peisongdan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.PeisongdanView" >
+
+		SELECT  peisongdan.* FROM peisongdan  peisongdan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.PeisongdanView" >
+		SELECT * FROM peisongdan  peisongdan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
